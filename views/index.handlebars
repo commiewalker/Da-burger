@@ -1,0 +1,36 @@
+<div class="d-flex-inline topic">
+  <img src="https://i.dlpng.com/static/png/386756_preview.png">
+  <h2 class="text-danger">Eat-Da-Burger!</h2>
+</div>
+
+<div class="d-flex">
+<div class="display d-flex flex-column">
+    {{#each burger}}
+    {{#unless devour}}
+    {{> burger/burger-block devour=false}}   
+    {{/unless}}   
+    {{/each}}
+</div>
+
+<div class="display d-flex flex-column">
+    {{#each burger}}
+    {{#if devour}}
+    {{> burger/burger-block devour=true}}
+    {{/if}}
+    {{/each}}
+</div>
+
+</div>
+
+<div class="d-flex flex-column align-items-center myform">
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <button class="btn btn-success addBtn" type="submit">Add Burger </button>
+</form>
+</div>
